@@ -12,6 +12,7 @@ function App() {
     >
       <h2>Contadores</h2>
       <Contador />
+      <Contador />
     </div>
   );
 }
