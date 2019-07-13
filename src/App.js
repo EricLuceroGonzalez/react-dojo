@@ -1,11 +1,18 @@
 import React from "react";
+import Contador from "./Components/Contador";
 
 function App() {
   return (
-    <React.Fragment>
-      <h1>Hola mundo!</h1>
-      <p>Lorem ipsum dolor</p>
-    </React.Fragment>
+    <div
+      className="container col-md-6 mt-4"
+      style={{
+        boxShadow: "6px 6px 6px gray",
+        padding: "30px 20px"
+      }}
+    >
+      <h2>Contadores</h2>
+      <Contador />
+    </div>
   );
 }
 
