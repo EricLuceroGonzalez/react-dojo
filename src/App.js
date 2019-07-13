@@ -1,5 +1,5 @@
 import React from "react";
-import Contador from "./Components/Contador";
+import Contadores from "./Components/Contadores";
 
 function App() {
   return (
@@ -11,8 +11,8 @@ function App() {
       }}
     >
       <h2>Contadores</h2>
-      <Contador />
-      <Contador />
+      <Contadores />
+
     </div>
   );
 }

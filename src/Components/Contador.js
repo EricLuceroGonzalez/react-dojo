@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Button, Badge } from "reactstrap";
 class Contador extends Component {
   state = {
-    titulo: "Gamma",
-    valor: 3
+    titulo: this.props.titulo,
+    valor: this.props.valor
   };
 
   incrementarContador = () => {
@@ -25,19 +25,19 @@ class Contador extends Component {
     // Returns the entire Badge with the number depending on condition
     if (this.state.valor > 0) {
       return (
-        <Badge color="primary" style={{ fontSize: "1.65em" }}>
+        <Badge color="primary" style={{ fontSize: "1.65em", width: "3em" }}>
           {this.state.valor}
         </Badge>
       );
     } else if (this.state.valor < 0) {
       return (
-        <Badge color="danger" style={{ fontSize: "1.65em" }}>
+        <Badge color="danger" style={{ fontSize: "1.65em", width: "3em" }}>
           {this.state.valor}
         </Badge>
       );
     } else
       return (
-        <Badge color="warning" style={{ fontSize: "1.65em" }}>
+        <Badge color="warning" style={{ fontSize: "1.65em", width: "3em" }}>
           cero
         </Badge>
       );
@@ -51,7 +51,8 @@ class Contador extends Component {
           backgroundColor: "rgb(200,200,1)",
           padding: "20px 12px",
           borderRadius: "14px",
-          boxShadow: "2px 6px 6px gray"
+          boxShadow: "2px 6px 6px gray",
+          margin: '30px auto'
         }}
       >
         <h2 className="ml-2">{this.state.titulo}</h2>
