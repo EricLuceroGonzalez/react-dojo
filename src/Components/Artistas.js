@@ -13,8 +13,8 @@ class Artistas extends Component {
         console.log(response.data);
         // Pass the data
         this.setState({
-            artistas: response.data
-        })
+          artistas: response.data
+        });
       })
       .catch(err => {
         console.log(err);
@@ -23,6 +23,15 @@ class Artistas extends Component {
         // always executed
       });
   }
+
+  renderArtistas() {
+    if (this.state.artistas.length === 0) {
+      return <h2>Cargando Artistas</h2>;
+    } else {
+      return <h2>Artistas ready!</h2>;
+    }
+  }
+
   render() {
     return <h1>Lista de Artistas</h1>;
   }
