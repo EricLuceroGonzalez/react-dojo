@@ -2,18 +2,20 @@ import React, { Component } from "react";
 import axios from "axios";
 
 class Artistas extends Component {
-  state = {};
+  state = {
+      artistas: []
+  };
+
   componentDidMount() {
     // Build the API
 
     // **** GET: Make a request for a user with a given ID
     axios
       .get("https://devf-musica.herokuapp.com/api/v1/artista")
-      .then(response => {
-        console.log(response.data);
+      .then(res => {
         // Pass the data
         this.setState({
-          artistas: response.data
+          artistas: res.data
         });
       })
       .catch(err => {
@@ -24,16 +26,21 @@ class Artistas extends Component {
       });
   }
 
-  renderArtistas() {
+  renderArtistas = () => {
     if (this.state.artistas.length === 0) {
       return <h2>Cargando Artistas</h2>;
     } else {
       return <h2>Artistas ready!</h2>;
     }
-  }
+  };
 
   render() {
-    return <h1>Lista de Artistas</h1>;
+    return (
+      <React.Fragment>
+        <h1>Lista de Artistas</h1>
+        {this.renderArtistas()}
+      </React.Fragment>
+    );
   }
 }
 
